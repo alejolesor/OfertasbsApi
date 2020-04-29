@@ -34,7 +34,6 @@ C:\Users\Administrador\Documents\DesarrollosSoftware\SBS\OfertasbsApi\OfertasbsA
 C:\Users\Administrador\Documents\DesarrollosSoftware\SBS\OfertasbsApi\OfertasbsApi\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
 C:\Users\Administrador\Documents\DesarrollosSoftware\SBS\OfertasbsApi\OfertasbsApi\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\Administrador\Documents\DesarrollosSoftware\SBS\OfertasbsApi\OfertasbsApi\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
-C:\Users\Administrador\Documents\DesarrollosSoftware\SBS\OfertasbsApi\OfertasbsApi\obj\Debug\netcoreapp3.1\OfertasbsApi.csprojAssemblyReference.cache
 C:\Users\Administrador\Documents\DesarrollosSoftware\SBS\OfertasbsApi\OfertasbsApi\obj\Debug\netcoreapp3.1\OfertasbsApi.csproj.CoreCompileInputs.cache
 C:\Users\Administrador\Documents\DesarrollosSoftware\SBS\OfertasbsApi\OfertasbsApi\obj\Debug\netcoreapp3.1\OfertasbsApi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Administrador\Documents\DesarrollosSoftware\SBS\OfertasbsApi\OfertasbsApi\obj\Debug\netcoreapp3.1\OfertasbsApi.AssemblyInfoInputs.cache
