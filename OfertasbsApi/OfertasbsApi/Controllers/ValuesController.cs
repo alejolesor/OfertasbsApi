@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Cors;
@@ -16,7 +17,7 @@ using OfertasbsApi.models;
 namespace OfertasbsApi.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/Values")]
     public class ValuesController : Controller
     {
         // GET: api/<controller>
@@ -28,6 +29,7 @@ namespace OfertasbsApi.Controllers
             var request = (HttpWebRequest)WebRequest.Create("https://restcountries.eu/rest/v2/lang/es");
 
             request.Method = "GET";
+            
 
             var content = string.Empty;
 
@@ -85,6 +87,25 @@ namespace OfertasbsApi.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+        }
+
+        [HttpGet]
+        [Route("getuser")]
+        public IActionResult Getuser(string user)
+        {
+            
+            var URL = "http://ec2-3-22-102-75.us-east-2.compute.amazonaws.com/api";
+            var endpoint = URL + "/User/validateUser?user=" + user;
+            var client = new HttpClient();
+            HttpResponseMessage response = client.GetAsync(endpoint).Result;
+            if (response.IsSuccessStatusCode)
+            {
+                var services = response.Content.ReadAsStringAsync();
+                Console.WriteLine(services.Result);
+                return Ok(services.Result);
+            }
+
+            return BadRequest();
         }
     }
 }
