@@ -191,6 +191,39 @@ namespace OfertasbsApi.Controllers
         }
 
 
+        [HttpGet]
+        [Route("ConsultaFactura")]
+        public IActionResult ConsultaFactura(int numeroFactura, string topic)
+        {
+            kafka = new serviceKafka();
+            services = new services();
+            var response = services.FacturaAgua(numeroFactura);
+            var json = response.Content.ReadAsStringAsync();
+            var responseJsonD = string.Empty;
+            if (!response.IsSuccessStatusCode)
+            {
+                Console.Write("Se presento error");
+                return BadRequest(json.Result);
+            }
+            else
+            {
+                Console.Write("Success");
+                var res = json.Result.ToString();
+                var resProducer = kafka.ProducerTopic(res, topic);
+                if (resProducer)
+                {
+                    responseJsonD = "Se ha realizado la publicacion del Topic factura de agua" + " // " + topic;
+                }
+                else
+                {
+                    responseJsonD = "No se ha publicado el Topic ";
+                }
+                return Ok(responseJsonD);
+            }
+
+        }
+
+
 
     }
 }

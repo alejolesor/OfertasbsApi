@@ -126,5 +126,15 @@ namespace OfertasbsApi.negocio
             return response;
         }
 
+        public HttpResponseMessage FacturaAgua(int numeroFactura)
+        {
+            var URL = "http://localhost:9090/servicios/pagos/v1/payments/";
+            var endpoint = URL + numeroFactura;
+            var client = new HttpClient();
+            HttpResponseMessage response = client.GetAsync(endpoint).Result;
+            client.Dispose();
+            return response;
+        }
+
     }
 }
