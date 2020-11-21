@@ -111,7 +111,50 @@ namespace OfertasbsApi.Controllers
                 Console.WriteLine("Success");
                 return Ok(json.Result);
             }
-      
+
+        }
+
+        [HttpPost]
+        [Route("getTransport")]
+        public IActionResult getTransport(LogisticTransport transport)
+        {
+
+            products = new productService();
+            var response = products.getTransport(transport);
+            var json = response.Content.ReadAsStringAsync();
+            if (!response.IsSuccessStatusCode)
+            {
+                Console.WriteLine("Se presento un Error");
+                return BadRequest(json.Result);
+            }
+            else
+            {
+                Console.WriteLine("Success");
+                return Ok(json.Result);
+            }
+
+
+        }
+
+        [HttpPost]
+        [Route("getHotels")]
+        public IActionResult getHotels(LogisticHotels transport)
+        {
+            products = new productService();
+            var response = products.getHotels(transport);
+            var json = response.Content.ReadAsStringAsync();
+            if (!response.IsSuccessStatusCode)
+            {
+                Console.WriteLine("Se presento un Error");
+                return BadRequest(json.Result);
+            }
+            else
+            {
+                Console.WriteLine("Success");
+                return Ok(json.Result);
+            }
+
+
         }
     }
 }

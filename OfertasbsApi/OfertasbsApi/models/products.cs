@@ -11,7 +11,7 @@ namespace OfertasbsApi.models
     {
         public string? id { get; set; }
         public string Name { get; set; }
-        public string EventDate { get; set; }
+        public string EventDateString { get; set; }
         public string Description { get; set; }
         public int Amount { get; set; }
         public string DestinationCity { get; set; }
@@ -23,5 +23,23 @@ namespace OfertasbsApi.models
         [Display(Name = "File")]
         public IFormFile File { get; set; }
 
+    }
+
+    public class LogisticTransport
+    {
+        public string transportType { get; set; }
+        public int passengersNumber { get; set; }
+        public string originCityDescription { get; set; }
+        public string destinationCityDescription { get; set; }
+        public string departureDate { get; set; }
+        public string returnDate { get; set; }
+    }
+
+    public class LogisticHotels
+    {
+        public int guestNumber { get; set; }
+        public string city { get; set; }
+        public string chekInDay { get; set; }
+        public string chekOutDay { get; set; }
     }
 }
